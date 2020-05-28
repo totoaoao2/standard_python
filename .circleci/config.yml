@@ -16,6 +16,7 @@ jobs:
       - run:
           name: linting
           command: |
+            sudo pip install pipenv
             sudo pip install tox
             pipenv install --dev
             tox
