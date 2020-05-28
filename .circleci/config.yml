@@ -1,0 +1,47 @@
+version: 2.1
+executors:
+  build:
+    docker:
+      - image: circleci/python:3.6.5
+  deploy:
+    docker:
+      - image: circleci/python:3.6.5
+
+jobs:
+  build:
+    executor:
+      name: build
+    steps:
+      - checkout
+      - run:
+          name: linting
+          command: |
+            sudo pip install tox
+            pipenv install --dev
+            tox
+  deploy:
+    executor:
+      name: deploy
+    steps:
+      - checkout
+      - run:
+          name: deploy
+          command: |
+            echo "deploy"
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          name: test_build
+          filters:
+            branches:
+              only: /.*/
+      - deploy:
+          name: test_deploy
+          filters:
+            branches:
+              only: /.*/
+          requires:
+            - test_build
