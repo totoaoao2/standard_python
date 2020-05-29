@@ -19,7 +19,7 @@ jobs:
             sudo pip install pipenv
             sudo pip install tox
             pipenv install --dev
-            pipenv run tox
+            tox
   deploy:
     executor:
       name: deploy
