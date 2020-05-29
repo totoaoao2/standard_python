@@ -4,25 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-autopep8 = "==1.4.4"
-coverage = "==4.5.3"
-testfixtures = "==6.7.0"
-pytest = "==4.4.0"
-pytest-django = "==3.4.8"
-pytest-cov = "==2.6.1"
-pytest-xdist = "==1.28.0"
-flake8 = "==3.7.7"
-openapi-spec-validator = "==0.2.7"
-tox = "==3.9.0"
-xlrd = "==1.2.0"
+tox = "*"
+pytest = "*"
 
 [packages]
-
+tox = "*"
 
 [requires]
 python_version = "3.6"
-
-[scripts]
-lint = "flake8 --show-source rc_tasks_search"
-fix = "autopep8 -ivr rc_tasks_search"
-validate-swagger = "python -m unittest docs.tests.test_swagger.TestSwaggerValidation"
