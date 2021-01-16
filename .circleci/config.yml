@@ -14,7 +14,7 @@ commands:
         type: string
     steps:
       - run:
-          name: test_name
+          name: test_name_dsp
           command: |
             echo "aaa"
 
