@@ -32,16 +32,16 @@ jobs:
 
 workflows:
   version: 2
-    jobs:
-      - build:
-          name: test_build
-          filters:
-            branches:
-              only: /.*/
-      - deploy:
-          name: test_deploy
-          filters:
-            branches:
-              only: /.*/
-          requires:
-            - test_build
+  jobs:
+    - build:
+        name: test_build
+        filters:
+          branches:
+            only: /.*/
+    - deploy:
+        name: test_deploy
+        filters:
+          branches:
+            only: /.*/
+        requires:
+          - test_build
