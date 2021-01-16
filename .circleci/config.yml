@@ -16,7 +16,7 @@ commands:
     - run:
         name: test_name
           command: |
-            echo << test_name >>
+            echo << parameters.test_name >>
 
 jobs:
   build:
