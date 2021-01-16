@@ -7,6 +7,17 @@ executors:
     docker:
       - image: circleci/python:3.6.5
 
+commans
+  test_command:
+    parameters:
+      test_name:
+        type: string
+  steps:
+    - run:
+        name: test_name
+          command: |
+            echo << test_name >>
+
 jobs:
   build:
     executor:
@@ -39,6 +50,9 @@ workflows:
           filters:
             branches:
               only: /.*/
+      - steps
+        - test_command
+          test_command: aaaa
       - deploy:
           name: test_deploy
           filters:
