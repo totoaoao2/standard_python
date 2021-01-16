@@ -25,15 +25,6 @@ jobs:
       name: build
     steps:
       - test_command:
-
-#      - checkout
-#      - run:
-#          name: linting
-#          command: |
-#            sudo pip install pipenv
-#            sudo pip install tox
-#            pipenv install --dev
-#            tox
   deploy:
     executor:
       name: deploy
