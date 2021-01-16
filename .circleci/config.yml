@@ -17,20 +17,23 @@ commands:
           name: test_name
           command: |
             echo << parameters.test_name >>
+            echo "-----"
 
 jobs:
   build:
     executor:
       name: build
     steps:
-      - checkout
-      - run:
-          name: linting
-          command: |
-            sudo pip install pipenv
-            sudo pip install tox
-            pipenv install --dev
-            tox
+      - test_command:
+
+#      - checkout
+#      - run:
+#          name: linting
+#          command: |
+#            sudo pip install pipenv
+#            sudo pip install tox
+#            pipenv install --dev
+#            tox
   deploy:
     executor:
       name: deploy
@@ -50,9 +53,6 @@ workflows:
           filters:
             branches:
               only: /.*/
-      - steps
-        - test_command
-#          test_name: aaaa
       - deploy:
           name: test_deploy
           filters:
