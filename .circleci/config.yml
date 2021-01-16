@@ -16,7 +16,7 @@ commands:
       - run:
           name: test_name_dsp
           command: |
-            echo "aaa"
+            echo test_name
 
 jobs:
   build:
