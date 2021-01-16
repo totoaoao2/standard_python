@@ -7,7 +7,7 @@ executors:
     docker:
       - image: circleci/python:3.6.5
 
-commans:
+commands:
   test_command:
     parameters:
       test_name:
