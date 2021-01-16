@@ -6,4 +6,5 @@ class Hello:
 
     def output(self):
         print(self.param)
+        print(self.param)
         return self.param
