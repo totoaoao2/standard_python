@@ -12,11 +12,11 @@ commands:
     parameters:
       test_name:
         type: string
-  steps:
-    - run:
-        name: test_name
-        command: |
-          echo << parameters.test_name >>
+    steps:
+      - run:
+          name: test_name
+          command: |
+            echo << parameters.test_name >>
 
 jobs:
   build:
