@@ -17,14 +17,20 @@ commands:
           name: test_name
           command: |
             echo << parameters.test_name >>
-            echo "-----"
 
 jobs:
   build:
     executor:
       name: build
     steps:
-      - test_command:
+      - checkout
+      - run:
+          name: linting
+          command: |
+            sudo pip install pipenv
+            sudo pip install tox
+            pipenv install --dev
+            tox
   deploy:
     executor:
       name: deploy
