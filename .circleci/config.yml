@@ -15,8 +15,8 @@ commands:
   steps:
     - run:
         name: test_name
-          command: |
-            echo << parameters.test_name >>
+        command: |
+          echo << parameters.test_name >>
 
 jobs:
   build:
