@@ -52,7 +52,7 @@ workflows:
               only: /.*/
       - steps
         - test_command
-          test_command: aaaa
+          test_name: aaaa
       - deploy:
           name: test_deploy
           filters:
