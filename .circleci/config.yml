@@ -9,6 +9,9 @@ executors:
 
 commands:
   test_command:
+    parameters:
+      test_name:
+        type: string
     steps:
       - run:
           name: test_name_dsp
@@ -21,6 +24,7 @@ jobs:
       name: build
     steps:
       - test_command
+          test_name: aaaaaa
   deploy:
     executor:
       name: deploy
